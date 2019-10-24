@@ -17,5 +17,10 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new GetTodos());
   }
-
+  deleteTodo(id: number) {
+    this.store.dispatch(new DeleteTodo(id))
+  }
+  editTodo(payload: Todo) {
+    this.store.dispatch(new SetSelectedTodo(payload));
+  }
 }
